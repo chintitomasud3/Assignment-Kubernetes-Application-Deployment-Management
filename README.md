@@ -1,8 +1,4 @@
-**Here's a complete guide to solve the assignment.** I'll provide clear, step-by-step instructions, required YAML files, explanations, and what to observe/screenshot.
 
----
-
-### **Part 1: Conceptual Understanding** (Your own brief answers – 3–5 lines each)
 
 **1. How does Kubernetes ensure high availability compared to traditional deployment?**  
 
@@ -22,7 +18,7 @@
 **On local machine:**
 
 ```bash
-minikube start --driver=docker
+minikube start --driver=docker --vm==true
 ```
 
 ![Minikube Start](snapshots/minibuke_Start.png)
@@ -260,26 +256,3 @@ kubectl get pods -n dev-env       # shows pods
 
 ---
 
-### **Submission Requirements**
-
-**YAML files to submit:**
-- `nginx-deployment.yaml` (final version with env)
-- `nginx-service.yaml`
-- `configmap.yaml`
-- `secret.yaml`
-
-**Screenshots:**
-- Running Pods (default + dev-env)
-- Service access in browser
-- Scaling (4 pods)
-
-**Written explanations** as requested in Parts 1, 2, 5, 6.
-
----
-
-**Tips:**
-- Always use `kubectl get all` to check status.
-- Use `kubectl edit deployment/nginx-deployment` for quick changes.
-- Clean up: `kubectl delete all --all -n dev-env` and `minikube delete` when done.
-
-You can now complete the assignment confidently. Let me know if you need any YAML adjustment or help with a specific part!
