@@ -135,7 +135,7 @@ metadata:
 type: Opaque
 data:
   username: admin          
-  password: admin123
+  password: password
 ```
 
 **Update Deployment** (add to `spec.template.spec.containers[0]`):
