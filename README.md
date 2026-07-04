@@ -9,7 +9,7 @@
 
 **3.** Services are required because Pods have changing IPs. A Service provides a stable IP/DNS name and load balances traffic to the Pods.
 
-**4.** ConfigMaps store non-sensitive data (e.g., APP_MODE=dev), while Secrets store sensitive data (e.g., passwords) in base64. Secrets offer better security and access control.
+**4.** ConfigMaps store non-sensitive data (e.g., APP_MODE=dev), while Secrets store sensitive data.
 
 ---
 
