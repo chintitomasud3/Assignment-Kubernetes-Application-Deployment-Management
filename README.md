@@ -18,7 +18,7 @@
 **On local machine:**
 
 ```bash
-minikube start --driver=docker --vm==true
+minikube start --driver=docker --vm=true
 ```
 
 ![Minikube Start](snapshots/minibuke_Start.png)
