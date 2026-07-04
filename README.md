@@ -254,5 +254,6 @@ kubectl get pods -n dev-env       # shows pods
 
 ![Dev-Env Namespace](snapshots/devenv_namespace.png)
 
+
 ---
 
