@@ -17,3 +17,19 @@ spec:
         image: nginx:alpine
         ports:
         - containerPort: 80
+        env:
+        - name: APP_MODE
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: APP_MODE
+        - name: USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: username
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: password
