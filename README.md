@@ -254,6 +254,10 @@ kubectl get pods -n dev-env       # shows pods
 
 ![Dev-Env Namespace](snapshots/devenv_namespace.png)
 
+## service access
+
+![Dev-Env Namespace](snapshots/service_access.png)
+
 
 ---
 
