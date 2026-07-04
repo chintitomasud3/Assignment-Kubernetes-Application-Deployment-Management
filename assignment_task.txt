@@ -1,0 +1,117 @@
+Assignment: Kubernetes Application Deployment & Management
+Objective
+Deploy and manage a containerized application in Kubernetes with basic configuration, scaling, and troubleshooting. This assignment focuses on practical understanding of core components and workflows. Request For Not Use AI Tool For Answering Part 1: Conceptual Understanding.
+
+Part 1: Conceptual Understanding
+Answer briefly (3–5 lines each):
+
+How does Kubernetes ensure high availability compared to traditional deployment?
+
+Explain the relationship between Pods, ReplicaSets, and Deployments.
+
+Why are Services required in Kubernetes?
+
+Difference between ConfigMaps and Secrets with a practical example.
+
+Part 2: Cluster Setup & Verification
+Set up a cluster using:
+
+●        Minikube, or
+
+●        K3s
+
+Then:
+
+●        Verify nodes and cluster status
+
+●     Check all system pods in the kube-system namespace
+
+●        Explain what you observe (2–3 lines)
+
+Part 3: Multi-Resource Deployment
+Deploy an application using Nginx with the following:
+
+●     A Deployment with 2 replicas
+
+●     A Service (NodePort) to expose the app
+
+●        Proper labels and selectors
+
+After deployment:
+
+●        Verify Pods, Deployment, and Service
+
+●        Access the application via browser
+
+Part 4: Configuration & Secrets
+Enhance your deployment:
+
+❖    Create a ConfigMap for:
+
+➢    App environment (e.g., APP_MODE=dev)
+
+❖    Create a Secret for:
+
+➢     Dummy credential (e.g., username/password)
+
+Update your Deployment:
+
+❖      Inject ConfigMap and Secret as environment variables
+
+❖    Verify inside the container using kubectl exec
+
+Part 5: Scaling & Rolling Updates
+Scale your Deployment to 4 replicas
+
+Perform a rolling update (change image version or add label)
+
+Observe rollout status using:
+
+○        kubectl rollout status
+
+Rollback to previous version
+
+Write a short explanation of what happened during update and rollback.
+
+Part 6: Basic Troubleshooting
+Perform the following:
+
+➔     Intentionally break your deployment (e.g., wrong image name)
+
+➔     Observe Pod status
+
+➔     Use:
+
+◆      kubectl describe pod
+
+◆      kubectl logs
+
+Then:
+
+❖      Fix the issue
+
+❖      Explain how you identified and resolved it
+
+Part 7: Namespaces (Isolation)
+Create a new namespace (e.g., dev-env)
+
+Deploy your application inside that namespace
+
+Show that resources are isolated from default namespace
+
+Submission Requirements
+❖      YAML manifests (Deployment, Service, ConfigMap, Secret)
+
+❖      Screenshots:
+
+➢      Running Pods
+
+➢      Service access in browser
+
+➢      Scaling result
+
+❖      Short written explanations for:
+
+➢      Concepts (Part 1)
+
+➢      Observations (Parts 2, 5, 6)

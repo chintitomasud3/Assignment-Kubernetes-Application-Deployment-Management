@@ -19,12 +19,13 @@
 
 ### **Part 2: Cluster Setup & Verification**
 
-**On  local machine:**
+**On local machine:**
 
 ```bash
 minikube start --driver=docker
-
 ```
+
+![Minikube Start](snapshots/minibuke_Start.png)
 
 **Verification commands:**
 
@@ -33,11 +34,14 @@ kubectl get nodes
 kubectl get pods -n kube-system
 ```
 
+![Minikube Status](snapshots/Minibuke_status.png)
+![Minikube Status 2](snapshots/Minibuke_status2.png)
+![kubectl get nodes](snapshots/kubectl_nodes.png)
+![kubectl get pods -n kube-system](snapshots/kubectl_node_kube_system.png)
+
 **What you should observe (write 2–3 lines):**
 - Nodes: 1 node in "Ready" status.
 - kube-system pods: Various pods like `coredns`, `etcd`, `kube-proxy`, `kube-apiserver` etc. are Running. This shows the core control plane and networking components are healthy.
-
-**Screenshot:** `kubectl get nodes` and `kubectl get pods -n kube-system`
 
 ---
 
@@ -106,7 +110,10 @@ minikube service nginx-service   # or
 # For K3s: curl http://localhost:30080 or use node IP:30080
 ```
 
-**Screenshot:** Running pods + browser showing Nginx welcome page.
+![Nginx Deployment YAML](snapshots/kubectl_nginx_deployment_yaml.png)
+![Nginx Service YAML](snapshots/kube_nginx_service_yml.png)
+![Nginx Pod Running](snapshots/nginx_pod_running.png)
+![Service Running / Network Access](snapshots/kubectl_service_running_network.png)
 
 ---
 
@@ -170,6 +177,8 @@ kubectl apply -f nginx-deployment.yaml   # updated
 kubectl exec -it <pod-name> -- env | grep -E 'APP_MODE|USERNAME|PASSWORD'
 ```
 
+![ConfigMap & Secret Variables Verified](snapshots/serrect_config_map_variable.png)
+
 ---
 
 ### **Part 5: Scaling & Rolling Updates**
@@ -192,10 +201,11 @@ kubectl rollout history deployment/nginx-deployment
 kubectl rollout undo deployment/nginx-deployment
 ```
 
+![Scale Replica](snapshots/scale_replica.png)
+![Rollout & Replication Status](snapshots/rollout_replication.png)
+
 **Short explanation:**
 During the update, Kubernetes creates a new ReplicaSet with the new image, gradually terminates old pods and brings up new ones (ensuring availability). Rollback reverts to the previous ReplicaSet, restoring the old image version without downtime.
-
-**Screenshot:** Scaling result (`kubectl get pods` showing 4 pods).
 
 ---
 
@@ -214,6 +224,9 @@ kubectl get pods          # ImagePullBackOff or ErrImagePull
 kubectl describe pod <pod-name>   # Look at Events section
 kubectl logs <pod-name>
 ```
+
+![Image Break - Wrong Image Name](snapshots/image_break.png)
+![ImagePullBackOff Error](snapshots/Image_pullback.png)
 
 **Fix:**
 
@@ -242,6 +255,8 @@ kubectl apply -f nginx-service.yaml -n dev-env
 kubectl get pods                  # default namespace → empty
 kubectl get pods -n dev-env       # shows pods
 ```
+
+![Dev-Env Namespace](snapshots/devenv_namespace.png)
 
 ---
 
