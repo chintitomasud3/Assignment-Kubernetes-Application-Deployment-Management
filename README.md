@@ -134,8 +134,8 @@ metadata:
   name: app-secret
 type: Opaque
 data:
-  username: YWRtaW4=          # base64 of "admin"
-  password: cGFzc3dvcmQ=      # base64 of "password"
+  username: admin          
+  password: admin123
 ```
 
 **Update Deployment** (add to `spec.template.spec.containers[0]`):
